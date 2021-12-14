@@ -34,8 +34,9 @@ class IceCreamMachine:
         self.toppings = toppings
 
     def scoops(self):
-        return list(product(self.ingredients, self.toppings))
+        return [list(p) for p in product(self.ingredients, self.toppings)]
 
 
-machine = IceCreamMachine(["vanilla", "chocolate"], ["chocolate sauce"])
-print(machine.scoops())  # should print[['vanilla', 'chocolate sauce'], ['chocolate', 'chocolate sauce']]
+if __name__ == "__main__":
+    machine = IceCreamMachine(["vanilla", "chocolate"], ["chocolate sauce"])
+    print(machine.scoops()) #should print[['vanilla', 'chocolate sauce'], ['chocolate', 'chocolate sauce']]

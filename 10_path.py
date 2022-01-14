@@ -45,7 +45,7 @@ class Path:
             orig = self.current_path.split('/')
             for part in new_path.split('/'):
                 if part == '..':
-                    orig = orig.pop()
+                    orig.pop()
                 else:
                     orig.append(part)
 
